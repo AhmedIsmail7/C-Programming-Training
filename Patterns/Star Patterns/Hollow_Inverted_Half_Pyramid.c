@@ -8,11 +8,15 @@ int main()
     scanf("%i", &r);
     for (i = r; i >= 1; i--)
     {
-        printf("*");
         for (j = i; j > 1; j--)
         {
-            printf(" *");
+            if (i == r  || j == i)
+                printf("* ");
+            else
+                printf("  ");
         }
-        printf("\n");
+        printf("*\n");
     }
 }
+
+

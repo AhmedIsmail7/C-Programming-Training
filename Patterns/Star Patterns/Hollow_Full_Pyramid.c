@@ -15,13 +15,15 @@ int main()
         }
         for (k = 1; k < i; k++)
         {
-            printf("* ");
+            if (i == r || k == 1)
+                printf("* ");
+            else
+                printf("  ");
         }
         printf("*\n");
         z--;
     }
 }
-
 
 
 
@@ -35,22 +37,27 @@ int main()
     unsigned char i;
     unsigned char j;
     unsigned char r;
-    unsigned char c;
+    signed char b;
     printf("Please enter number of rows : ");
     scanf("%i", &r);
     for (i = 1; i <= r; i++)
     {
-        c = r - i;
+        b = r - i;
         for (j = 1; j < r; j++)
         {
-            if (c > 0)
+            if (b > 0)
             {
                 printf(" ");
-                c--;
+                b--;
+            }
+            else if (b < 0 && i != r)
+            {
+                printf("  ");
             }
             else
             {
                 printf("* ");
+                b = -1;
             }
         }
         printf("*\n");
