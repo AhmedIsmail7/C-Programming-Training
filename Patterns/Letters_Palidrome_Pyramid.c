@@ -4,24 +4,32 @@
 int main()
 {
     int i, j;
-    int r, z;
+    int r;
+    unsigned char ch;
     printf("Please enter number of rows : ");
     scanf("%i", &r);
+    while (r > 26)
+    {
+        printf("Invalid input! Try again : ");
+        scanf("%i", &r);
+    }
     for (i = 1; i <= r; i++)
     {
-        z = 1;
+        ch = 'A';
         for (j = 1; j <= (i * 2 - 1); j++)
         {
-            printf("%i ", z);
+            printf("%c ", ch);
             if (j < i)
             {
-                z++;
+                ch++;
             }
             else
             {
-                z--;
+                ch--;
             }
         }
         printf("\n");
     }
 }
+
+
